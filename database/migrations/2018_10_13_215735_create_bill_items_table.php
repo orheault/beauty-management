@@ -20,10 +20,10 @@ class CreateBillItemsTable extends Migration
             $table->timestamps();
 
             $table->integer('idBill')->unsigned()->index();
-            $table->foreign('idBill')->references('idBill')->on('bills');
+            $table->foreign('idBill')->references('idBill')->on('bills')->onDelte('cascade');
 
             $table->integer('idProduct')->index();
-            $table->foreign('idProduct')->references('idProduct')->on('products');
+            $table->foreign('idProduct')->references('idProduct')->on('products')->onDelte('cascade');
 
         });
     }

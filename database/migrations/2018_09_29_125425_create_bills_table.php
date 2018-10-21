@@ -18,7 +18,7 @@ class CreateBillsTable extends Migration
             $table->timestamps();
 
             $table->integer('idClient')->unsigned()->index()->nullable();
-            $table->foreign('idClient')->references('idClient')->on('clients');
+            $table->foreign('idClient')->references('idClient')->on('clients')->onDelte('cascade');
         });
     }
 
