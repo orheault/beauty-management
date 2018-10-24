@@ -64,7 +64,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('spending') }}">
-                        <span class="menu-title">Dépense</span>
+                        <span class="menu-title">Dépenses</span>
                         <i class="mdi mdi-minus-circle menu-icon"></i>
                     </a>
                 </li>

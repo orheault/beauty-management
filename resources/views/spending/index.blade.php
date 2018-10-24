@@ -42,7 +42,7 @@
                                         {{$spending['description']}}
                                     </td>
                                     <td>
-                                        {{ $spending['created_at']->format('d-m-y')}}
+                                        {{ date_create($spending['spentDate'])->format('d-m-y')}}
                                     </td>
                                     <td>
                                         <a href="{{ route('spending.delete', $spending['idSpent']) }}"

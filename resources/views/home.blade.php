@@ -34,7 +34,7 @@
                             <div class="card bg-gradient-primary card-img-holder text-white">
                                 <div class="card-body">
                                     <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-                                    <a href="{{ route('clients') }}" class="text-white"><h4>Client</h4></a>
+                                    <a href="{{ route('clients') }}" class="text-white"><h4>Clients</h4></a>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             <div class="card bg-gradient-primary card-img-holder text-white">
                                 <div class="card-body">
                                     <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-                                    <a href="{{ route('spending') }}" class="text-white"><h4>Dépense</h4></a>
+                                    <a href="{{ route('spending') }}" class="text-white"><h4>Dépenses</h4></a>
                                 </div>
                             </div>
                         </div>
