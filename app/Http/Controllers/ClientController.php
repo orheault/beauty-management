@@ -68,6 +68,10 @@ class ClientController extends Controller
             $client->lastName = $data['lastName'];
             $client->phoneNumber = $data['phoneNumber'];
             $client->glueAllergy = $data->input('glueAllergy') == 'on';
+            $client->style = $data->get('style');
+            $client->curve = $data->get('curve');
+            $client->length = $data->get('length');
+            $client->thickness = $data->get('thickness');
             $client->save();
         }
         else{

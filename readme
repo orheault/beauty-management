@@ -21,3 +21,5 @@ php artisan make:seeder UsersTableSeeder
 
 // make migration
 php artisan make:migration create_users_table
+// Update migration
+php artisan migrate --path=/database/migrations/update/

@@ -20,9 +20,13 @@ class CreateClientsTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('phoneNumber');
-$table->boolean('glueAllergy')->default(false);
-});
-}
+            $table->boolean('glueAllergy')->default(false);
+            $table->double('thickness')->nullable();
+            $table->char('style')->nullable();
+            $table->integer('length')->nullable();
+            $table->char('curve')->nullable();
+        });
+    }
 
     /**
      * Reverse the migrations.
