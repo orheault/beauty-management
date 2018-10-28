@@ -21,9 +21,8 @@ class CreateClientsTable extends Migration
             $table->string('lastName');
             $table->string('phoneNumber');
             $table->boolean('glueAllergy')->default(false);
-            $table->double('thickness')->nullable();
             $table->char('style')->nullable();
-            $table->integer('length')->nullable();
+            $table->text('eyelashNote')->nullable();
             $table->char('curve')->nullable();
         });
     }

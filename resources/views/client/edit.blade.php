@@ -93,80 +93,44 @@
                             <div class="float-left h4">Faux cils</div>
                         </div>
                         <div class="card-body">
-                            <div class="col-md-12">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">Style</label>
-                                    <div class="col-sm-2">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                {{ Form::radio('style', 'p', $client['style'] == 'p' ? true: false) }}
-                                                Papillon
-                                                <i class="input-helper"></i></label>
-                                        </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Style</label>
+                                <div class="col-sm-2">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            {{ Form::radio('style', 'p', $client['style'] == 'p' ? true: false) }}
+                                            Papillon
+                                            <i class="input-helper"></i></label>
                                     </div>
-                                    <div class="col-sm-2">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                {{ Form::radio('style', 'c', $client['style'] == 'c' ? true: false) }}
-                                                Coupé
-                                                <i class="input-helper"></i></label>
-                                        </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            {{ Form::radio('style', 'pe', $client['style'] == 'pe' ? true: false) }}
+                                            Poupée
+                                            <i class="input-helper"></i></label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Courbe</label>
-                                    <div class="col-sm-9">
-                                        <select required autofocus class="form-control" name="curve">
-                                            <option></option>
-                                            <option {{$client['curve']=='b'? 'selected':''}}>b</option>
-                                            <option {{$client['curve']=='c'? 'selected':''}}>c</option>
-                                            <option {{$client['curve']=='d'? 'selected':''}}>d</option>
-                                            <option {{$client['curve']=='j'? 'selected':''}}>j</option>
-                                        </select>
-                                    </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Courbe</label>
+                                <div class="col-sm-9">
+                                    <select required autofocus class="form-control" name="curve">
+                                        <option></option>
+                                        <option {{$client['curve']=='b'? 'selected':''}}>b</option>
+                                        <option {{$client['curve']=='c'? 'selected':''}}>c</option>
+                                        <option {{$client['curve']=='d'? 'selected':''}}>d</option>
+                                        <option {{$client['curve']=='j'? 'selected':''}}>j</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Longueur</label>
-                                    <div class="col-sm-9">
-                                        <select required autofocus class="form-control" name="length">
-                                            <option></option>
-                                            <option {{$client['length']=='9'? 'selected':''}}>9</option>
-                                            <option {{$client['length']=='10'? 'selected':''}}>10</option>
-                                            <option {{$client['length']=='11'? 'selected':''}}>11</option>
-                                            <option {{$client['length']=='12'? 'selected':''}}>12</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label>Longueur et épaisseur</label>
+                                <textarea class="form-control" name="eyelashNote"
+                                          rows="4">{{$client['eyelashNote']}}</textarea>
                             </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Épaisseur</label>
-                                    <div class="col-sm-9">
-                                        <select required autofocus class="form-control" name="thickness">
-                                            <option></option>
-                                            <option {{$client['thickness']=='0.1'? 'selected':''}}>0.10</option>
-                                            <option {{$client['thickness']=='0.11'? 'selected':''}}>0.11</option>
-                                            <option {{$client['thickness']=='0.12'? 'selected':''}}>0.12</option>
-                                            <option {{$client['thickness']=='0.13'? 'selected':''}}>0.13</option>
-                                            <option {{$client['thickness']=='0.14'? 'selected':''}}>0.14</option>
-                                            <option {{$client['thickness']=='0.15'? 'selected':''}}>0.15</option>
-                                            <option {{$client['thickness']=='0.16'? 'selected':''}}>0.16</option>
-                                            <option {{$client['thickness']=='0.17'? 'selected':''}}>0.17</option>
-                                            <option {{$client['thickness']=='0.18'? 'selected':''}}>0.18</option>
-                                            <option {{$client['thickness']=='0.19'? 'selected':''}}>0.19</option>
-                                            <option {{$client['thickness']=='0.2'? 'selected':''}}>0.20</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>

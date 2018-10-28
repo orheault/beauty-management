@@ -70,8 +70,7 @@ class ClientController extends Controller
             $client->glueAllergy = $data->input('glueAllergy') == 'on';
             $client->style = $data->get('style');
             $client->curve = $data->get('curve');
-            $client->length = $data->get('length');
-            $client->thickness = $data->get('thickness');
+            $client->eyelashNote = $data['eyelashNote'];
             $client->save();
         }
         else{

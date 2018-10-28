@@ -14,9 +14,6 @@ class AddFauxCilColumnsToClientsTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->double('thickness')->nullable();
-            $table->char('style')->nullable();
-            $table->integer('length')->nullable();
             $table->char('curve')->nullable();
         });
     }
