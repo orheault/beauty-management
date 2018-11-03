@@ -38,7 +38,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="float-left h1" style="color:purple">Client</div>
+                        <div class="float-left h1 " style="color:purple">Client</div>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
 
                             {{ Form::hidden('idClient', $client['idClient']) }}
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-12 col-md-12 col-lg-4">
                                     <div class="form-group">
                                         <label>Prénom</label>
                                         <input id="firstName"
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4">
+                                <div class="col-sm-12 col-md-12 col-lg-4">
                                     <div class="form-group">
                                         <label>Nom</label>
                                         <input id="lastName"
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4">
+                                <div class="col-sm-12 col-md-12 col-lg-4">
                                     <div class="form-group">
                                         <label>Numéro de téléphone</label>
                                         <input id="phoneNumber"
@@ -108,7 +108,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-md-12 col-lg-4">
                                     <div class="form-group">
                                         <label class="">
                                             Allergie
@@ -127,11 +127,21 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
+                                        <label>
+                                            Client réréfé:
+                                        </label>
+                                        <label>
+                                            {{$client['numberOfReferClient']}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
                                         <label class="">
                                             Client référent
                                         </label>
                                     </div>
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
                                         {{ Form::hidden('idReferringClient', '') }}
                                         @if($client['idReferringClient'] == NULL)
                                             <div id="ClientReferringSearch" class="input-group">
@@ -170,7 +180,7 @@
                         <div class="card-body">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Style</label>
-                                <div class="col-sm-2">
+                                <div class="col-sm-4">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             {{ Form::radio('style', 'p', $client['style'] == 'p' ? true: false) }}
@@ -178,7 +188,7 @@
                                             <i class="input-helper"></i></label>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-4">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             {{ Form::radio('style', 'pe', $client['style'] == 'pe' ? true: false) }}
@@ -217,11 +227,11 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 col-sm-6 float-left">
+                            <div class="col-sm-12 float-left">
+                                <div class="col-md-6 col-sm-5 float-left">
                                     <a class="btn btn-gradient-dark" href="{{route('clients')}}"><span>Retour</span></a>
                                 </div>
-                                <div class="col-md-4  col-sm-6 float-right">
+                                <div class="col-md-6 col-sm-7 float-right">
                                     <button type="submit"
                                             class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
                                         {{ __('Enregistrer') }}

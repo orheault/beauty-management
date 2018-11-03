@@ -54,7 +54,9 @@ class ClientController extends Controller
      * Show the form to edit a client
      */
     public function edit($id){
-        return view('client.edit')->with('client',Client::where('idClient', $id)->first());
+        $client = Client::where('idClient', $id)->first();
+        $client['numberOfReferClient'] = Client::where('idReferringClient', $id)->count();
+        return view('client.edit')->with('client', $client);
     }
 
     /**
