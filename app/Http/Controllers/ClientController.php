@@ -71,6 +71,7 @@ class ClientController extends Controller
             $client->style = $data->get('style');
             $client->curve = $data->get('curve');
             $client->eyelashNote = $data['eyelashNote'];
+            $client->idReferringClient = $data['idReferringClient'];
             $client->save();
         }
         else{
@@ -84,6 +85,15 @@ class ClientController extends Controller
     public function getInformations($id)
     {
         return Client::where('idClient', $id)->first();
+    }
+
+    public function searchClientsByName($id)
+    {
+        $clients = Client::where('firstName', 'like', '%' . $id . '%')
+            ->orWhere('lastName', 'like', '%' . $id . '%')
+            ->get();
+
+        return $clients;
     }
 }
 

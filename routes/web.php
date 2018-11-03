@@ -26,6 +26,7 @@ Route::post('/client/create', 'ClientController@create')->name('client.create');
 Route::get('/client/{id}', 'ClientController@edit')->name('client.edit');
 Route::post('/client/editPost', 'ClientController@editPost')->name('client.postedit');
 Route::get('/client/getinformations/{id}', 'ClientController@getInformations')->name('client.getInformations');
+Route::get('/client/searchclientsbyname/{id}', 'ClientController@searchClientsByName')->name('client.searchClientsByName');
 
 // Billing route
 Route::get('/billing/new','BillingController@new')->name('billing.new');

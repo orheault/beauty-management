@@ -26,7 +26,7 @@ class  Client extends Model
     ];
 
     public function referringClient(){
-        return $this->hasOne('App/Client', 'idClient');
+        return $this->belongsTo(Client::class, 'idReferringClient')->first();
     }
 
     public function notes(){
@@ -35,6 +35,6 @@ class  Client extends Model
 
     public function bills()
     {
-        return $this->hasMany(Bill::class, 'idBill', 'idBill'); // 'App/Bill'
+        return $this->hasMany(Bill::class, 'idBill', 'idBill');
     }
 }
