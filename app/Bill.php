@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class  Bill extends Model
 {
-    protected $primaryKey = 'idBill';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'idBill', 'idClient', 'created_at'
+        'id', 'idClient', 'created_at'
     ];
 
     /**
@@ -25,13 +23,18 @@ class  Bill extends Model
     protected $hidden = [
     ];
 
+    public function totalCost()
+    {
+        return $this->billItems()->sum('price');
+    }
+
     public function client()
     {
-        return $this->belongsTo(Client::class, 'idClient', 'idClient');
+        return $this->belongsTo(Client::class);
     }
 
     public function billItems()
     {
-        return $this->hasMany(BillItem::class, 'idBillItem', 'idBillItem');
+        return $this->hasMany(BillItem::class);
     }
 }

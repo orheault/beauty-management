@@ -45,7 +45,7 @@
                                         {{ date_create($spending['spentDate'])->format('d-m-y')}}
                                     </td>
                                     <td>
-                                        <a href="{{ route('spending.delete', $spending['idSpent']) }}"
+                                        <a href="{{ route('spending.delete', $spending['id']) }}"
                                            class="mdi mdi-delete"></a>
                                     </td>
                                 </tr>

@@ -14,7 +14,7 @@ class CreateSpentsTable extends Migration
     public function up()
     {
         Schema::create('spents', function (Blueprint $table) {
-            $table->increments('idSpent')->index();
+            $table->increments('id')->index();
             $table->float('total');
             $table->string('description')->nullable();
             $table->date('spentDate');

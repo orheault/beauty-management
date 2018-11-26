@@ -40,7 +40,7 @@
                                         {{$client['phoneNumber']}}
                                     </td>
                                     <td>
-                                        <a href="{{route('client.edit', ['idClient'=> $client['idClient']])}}"><span>Détail</span></a>
+                                        <a href="{{route('client.edit', ['id'=> $client['id']])}}"><span>Détail</span></a>
                                     </td>
                                 </tr>
                             @endforeach

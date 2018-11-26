@@ -14,17 +14,22 @@ class CreateBillItemsTable extends Migration
     public function up()
     {
         Schema::create('bill_items', function (Blueprint $table) {
-            $table->increments('idBillItem')->index();
+            $table->increments('id')->index();
             $table->double('price');
             $table->text('description')->nullable();
             $table->timestamps();
 
-            $table->integer('idBill')->unsigned()->index();
-            $table->foreign('idBill')->references('idBill')->on('bills')->onDelte('cascade');
+            $table->unsignedInteger('product_id')->index();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelte('cascade');
 
-            $table->integer('idProduct')->index();
-            $table->foreign('idProduct')->references('idProduct')->on('products')->onDelte('cascade');
-
+            $table->unsignedInteger('bill_id')->index();
+            $table->foreign('bill_id')
+                ->references('id')
+                ->on('bills')
+                ->onDelte('cascade');
         });
     }
 

@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class  Client extends Model
 {
-    protected $primaryKey = 'idClient';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'idClient', 'idReferringClient', 'firstName', 'lastName', 'phoneNumber', 'registrationDate'
+        'id', 'idReferringClient', 'firstName', 'lastName', 'phoneNumber', 'registrationDate'
     ];
 
     /**
@@ -35,6 +33,6 @@ class  Client extends Model
 
     public function bills()
     {
-        return $this->hasMany(Bill::class, 'idBill', 'idBill');
+        return $this->hasMany(Bill::class);
     }
 }

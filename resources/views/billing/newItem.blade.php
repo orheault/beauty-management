@@ -20,7 +20,7 @@
                                         <label for="exampleFormControlSelect2">Produit</label>
                                         <select class="form-control" name="idProduct">
                                             @foreach($data['products'] as $product)
-                                                <option value="{{$product['idProduct']}}">{{$product['name']}}
+                                                <option value="{{$product['id']}}">{{$product['name']}}
                                                     - {{$product['defaultPrice']}} $
                                                 </option>
                                             @endforeach
@@ -33,7 +33,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Prix</label>
-                                        <input class="form-control form-control-lg" name="price" type="text"/>
+                                        <input class="form-control form-control-lg" name="price" type="text" required/>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,8 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 col-sm-6 float-left">
-                                    <a class="btn btn-gradient-dark" href="{{route('home')}}"><span>Annuler</span></a>
+                                    <a class="btn btn-gradient-dark"
+                                       href="{{route('billing.edit', ['id' =>  $data['billId']])}}"><span>Annuler</span></a>
                                 </div>
                                 <div class="col-md-4  col-sm-6 float-right">
                                     <button type=""

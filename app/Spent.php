@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class  Spent extends Model
 {
-    protected $primaryKey = 'idSpent';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'idSpent', 'total', 'description', 'spentDate'
+        'id', 'total', 'description', 'spentDate'
     ];
 
     /**

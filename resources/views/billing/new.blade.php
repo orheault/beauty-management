@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
     <div class="container">
         <div class="row justify">
@@ -12,53 +11,36 @@
                     <div class="card-body">
                         <script>
                             $(function () {
-                                var availableTags = [
-                                    "ActionScript",
-                                    "AppleScript",
-                                    "Asp",
-                                    "BASIC",
-                                    "C",
-                                    "C++",
-                                    "Clojure",
-                                    "COBOL",
-                                    "ColdFusion",
-                                    "Erlang",
-                                    "Fortran",
-                                    "Groovy",
-                                    "Haskell",
-                                    "Java",
-                                    "JavaScript",
-                                    "Lisp",
-                                    "Perl",
-                                    {label: "PHP", id: 1},
-                                    "Python",
-                                    "Ruby",
-                                    "Scala",
-                                    "Scheme"
-                                ];
 
                                 $("#name").autocomplete({
-                                    source: availableTags
+                                    source: function (request, response) {
+                                        var url = '{{url("client/searchclientsbyname")}}' + '/' + request['term'];
+                                        jQuery.get(url,
+                                            function (clients) {
+                                                var result = clients.map(function ($client) {
+                                                    return {
+                                                        'label': $client['firstName'] + ' ' + $client['lastName'] + ' ' + $client['phoneNumber'],
+                                                        'value': $client['id']
+                                                    };
+                                                });
+                                                response(result);
+                                            });
+                                    },
                                 });
 
                                 $("#name").on("autocompleteselect", function (event, ui) {
-                                    var url = '{{ url("client/getinformations") }}/' + ui.item.id;
-                                    var ajax = new XMLHttpRequest();
-                                    ajax.open('GET', url, true);
-                                    ajax.onreadystatechange = function () {
-                                        if (ajax.readyState === 4) {
-                                            var client = JSON.parse(ajax.response);
-                                            console.log(client);
+                                    var url = '{{ url("client/getinformations") }}/' + ui.item.value;
+                                    jQuery.get(url,
+                                        function (client) {
                                             $(':input[type="submit"]').prop('disabled', false);
                                             $('#clientInformations').css('visibility', 'visible');
 
                                             $('#labelNom').text(client['firstName'] + ' ' + client['lastName']);
-                                            $('#idClient').val(ui.item.id);
+                                            $('#name').val(client['firstName'] + ' ' + client['lastName']);
+                                            $("input[name='client_id']").val(ui.item.value);
                                             $('#labelPhone').text(client['phoneNumber']);
                                         }
-                                    };
-
-                                    ajax.send();
+                                    );
                                 });
 
                                 $("#buttonSearch").click(function () {
@@ -88,7 +70,7 @@
                             </div>
 
                             <div class="form-group row mb-0" style="visibility: hidden" id="clientInformations">
-                                {{ Form::hidden('idClient', '', array('id' => 'idClient')) }}
+                                {{ Form::hidden('client_id', '') }}
 
                                 <div class="col-md-6">
                                     <label>Nom: </label>

@@ -69,13 +69,13 @@
                     </a>
                 </li>
 
-                {{--<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('billing.new') }}">
                         <span class="menu-title">Facture</span>
                         <i class="mdi mdi-square-inc-cash menu-icon"></i>
                     </a>
                 </li>
-
+                {{--
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('statistique') }}">
                         <span class="menu-title">Statistique</span>
@@ -101,6 +101,15 @@
 
         <div class="main-panel">
             <div class="content-wrapper">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @yield('content')
             </div>
             <footer class="footer">

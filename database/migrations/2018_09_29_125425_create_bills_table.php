@@ -14,11 +14,14 @@ class CreateBillsTable extends Migration
     public function up()
     {
         Schema::create('bills', function (Blueprint $table) {
-            $table->increments('idBill')->index();
+            $table->increments('id')->index();
             $table->timestamps();
+            $table->unsignedInteger('client_id')->index();
 
-            $table->integer('idClient')->unsigned()->index()->nullable();
-            $table->foreign('idClient')->references('idClient')->on('clients')->onDelte('cascade');
+            $table->foreign('client_id')
+                ->references('id')
+                ->on('clients')
+                ->onDelte('cascade');
         });
     }
 

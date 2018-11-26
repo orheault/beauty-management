@@ -54,16 +54,19 @@ class ClientController extends Controller
      * Show the form to edit a client
      */
     public function edit($id){
-        $client = Client::where('idClient', $id)->first();
+        $client = Client::with('bills')->where('id', $id)->get();
+
         $client['numberOfReferClient'] = Client::where('idReferringClient', $id)->count();
-        return view('client.edit')->with('client', $client);
+
+        return view('client.edit')
+            ->with('client', $client);
     }
 
     /**
      * Post function to edit a client
      */
     public function editPost(Request $data){
-        $client = Client::where('idClient', $data['idClient'])->first();
+        $client = Client::where('id', $data['id'])->first();
 
         if($client != null) {
             $client->firstName = $data['firstName'];
@@ -86,7 +89,7 @@ class ClientController extends Controller
 
     public function getInformations($id)
     {
-        return Client::where('idClient', $id)->first();
+        return Client::where('id', $id)->first();
     }
 
     public function searchClientsByName($id)
