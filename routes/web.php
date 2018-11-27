@@ -33,3 +33,8 @@ Route::get('/spending/delete/{id}', 'SpendingController@delete')->name('spending
 
 // Statistique
 Route::get('/statistique', 'statistiqueController@index')->name('statistique');
+
+// Setting
+Route::get('/settings', 'settingController@index')->name('setting');
+Route::get('/setting/newcategory', 'settingController@newCategory')->name('setting.newcategory');
+Route::get('/setting/newitem', 'settingController@newItem')->name('setting.newitem');

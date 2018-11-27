@@ -75,6 +75,13 @@
                         <i class="mdi mdi-square-inc-cash menu-icon"></i>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('setting') }}">
+                        <span class="menu-title">Paramètre</span>
+                        <i class="mdi mdi-settings menu-icon"></i>
+                    </a>
+                </li>
                 {{--
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('statistique') }}">

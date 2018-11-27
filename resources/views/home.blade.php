@@ -54,6 +54,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-primary card-img-holder text-white">
+                                <div class="card-body">
+                                    <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
+                                    <a href="{{ route('setting') }}" class="text-white"><h4>Paramètre</h4></a>
+                                </div>
+                            </div>
+                        </div>
                         {{--              <div class="col-md-4 stretch-card grid-margin">
                                           <div class="card bg-gradient-primary card-img-holder text-white">
                                               <div class="card-body">
