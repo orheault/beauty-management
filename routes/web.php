@@ -35,8 +35,8 @@ Route::get('/spending/delete/{id}', 'SpendingController@delete')->name('spending
 Route::get('/statistique', 'statistiqueController@index')->name('statistique');
 
 // Setting
-Route::get('/settings', 'settingController@index')->name('settings');
-Route::get('/setting/newproductcategory', 'settingController@newProductCategory')->name('setting.newproductcategory');
-Route::get('/setting/newproduct', 'settingController@newProduct')->name('setting.newproduct');
-Route::Post('/setting/createnewcategory', 'settingController@createNewProductCategory')->name('setting.createnewproductcategory');
-Route::Post('/setting/createnewitem', 'settingController@createNewProduct')->name('setting.createnewproduct');
+Route::get('/settings', 'SettingController@index')->name('settings');
+Route::get('/setting/newproductcategory', 'SettingController@newProductCategory')->name('setting.newproductcategory');
+Route::get('/setting/newproduct', 'SettingController@newProduct')->name('setting.newproduct');
+Route::Post('/setting/createnewcategory', 'SettingController@createNewProductCategory')->name('setting.createnewproductcategory');
+Route::Post('/setting/createnewitem', 'SettingController@createNewProduct')->name('setting.createnewproduct');
