@@ -11,7 +11,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
+        /*DB::table('products')->insert([
             'name' => 'Pause Cil - Normal',
             'defaultPrice' => 55
         ]);
@@ -24,6 +24,6 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'name' => 'Pause ongle',
             'defaultPrice' => 45.00
-        ]);
+        ]);*/
     }
 }

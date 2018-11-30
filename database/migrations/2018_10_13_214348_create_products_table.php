@@ -18,6 +18,12 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->double('defaultPrice');
+
+            $table->unsignedInteger('product_category_id')->index();
+            $table->foreign('product_category_id')
+                ->references('id')
+                ->on('product_categories')
+                ->onDelte('cascade');
         });
     }
 

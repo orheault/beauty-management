@@ -56,35 +56,28 @@
             <div class="tab-pane container fade" id="product">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">Catégorie</div>
+                        <div class="form-group font-weight-bold">Catégorie</div>
 
                         <div class="float-right">
-                            <a href="{{route('setting.newcategory')}}" class="btn btn-gradient-primary btn-rounded">Ajout
-                                catégorie</a>
+                            <a href="{{route('setting.newproductcategory')}}"
+                               class="btn btn-gradient-primary btn-rounded">
+                                Ajout Nouvelle Catégorie</a>
                         </div>
 
                         <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>
-                                    Id
-                                </th>
-                                <th>
                                     Nom
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach($data['spents'] as $spending )--}}
-                            <tr>
-                                <td>
-                                    {{--        {{$spending['total']}}--}}
-                                </td>
-                                <td>
-                                    {{--{{$spending['description']}}--}}
-                                </td>
-                            </tr>
-                            {{--@endforeach--}}
+                            @foreach($data['productCategories'] as $productCategory )
+                                <tr>
+                                    <td> {{ $productCategory['name']}} </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -96,19 +89,16 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">Items</div>
+                        <div class="form-group font-weight-bold">Produit</div>
 
                         <div class="float-right">
-                            <a href="{{route('setting.newitem')}}" class="btn btn-gradient-primary btn-rounded">Ajout
-                                Item</a>
+                            <a href="{{route('setting.newproduct')}}" class="btn btn-gradient-primary btn-rounded">Ajout
+                                Nouveau Produit</a>
                         </div>
 
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>
-                                    Id
-                                </th>
                                 <th>
                                     Nom
                                 </th>
@@ -118,18 +108,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach($data['spents'] as $spending )--}}
-                            <tr>
-                                <td>
-                                    {{--        {{$spending['total']}}--}}
-                                </td>
-                                <td>
-                                    {{--{{$spending['description']}}--}}
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            {{--@endforeach--}}
+                            @foreach($data['products'] as $product )
+                                <tr>
+                                    <td> {{ $product['name']}} </td>
+                                    <td> {{ $product->productcategory->name}} </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

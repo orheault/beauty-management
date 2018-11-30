@@ -77,7 +77,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('setting') }}">
+                    <a class="nav-link" href="{{ route('settings') }}">
                         <span class="menu-title">Paramètre</span>
                         <i class="mdi mdi-settings menu-icon"></i>
                     </a>
