@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <script>
+        $(function () {
+            $('a[name=phoneNumber]').mask('(000) 000-0000');
+        });
+    </script>
     <div class="container">
         <div class="row justify">
             <div class="col-md">
@@ -25,6 +30,9 @@
                                 <th>
                                     Numéro de téléphone
                                 </th>
+                                <th>
+                                    Action
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,10 +45,11 @@
                                         {{$client['lastName']}}
                                     </td>
                                     <td>
-                                        {{$client['phoneNumber']}}
+                                        <a name="phoneNumber">{{$client['phoneNumber']}}</a>
                                     </td>
                                     <td>
-                                        <a href="{{route('client.edit', ['id'=> $client['id']])}}"><span>Détail</span></a>
+                                        <a class="mdi mdi-pencil" style="color:purple; font-size: 150%"
+                                           href="{{route('client.edit', ['id'=> $client['id']])}}"></a>
                                     </td>
                                 </tr>
                             @endforeach

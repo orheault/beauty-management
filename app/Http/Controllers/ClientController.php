@@ -56,7 +56,8 @@ class ClientController extends Controller
     public function edit($id){
         $client = Client::with('bills')->where('id', $id)->get();
 
-        $client['numberOfReferClient'] = Client::where('idReferringClient', $id)->count();
+        $client['numberOfReferClient'] = Client::where('idReferringClient', $id)
+            ->count();
 
         return view('client.edit')
             ->with('client', $client);

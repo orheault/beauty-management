@@ -23,7 +23,7 @@
     <script type="text/javascript" src="{{ asset('js/bundle.base.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/addons.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script type="text/javascript" src="{{ asset('js/jquery.mask.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/off-canvas.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/misc.js') }}"></script>
 </head>
@@ -71,7 +71,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('billing.new') }}">
-                        <span class="menu-title">Facture</span>
+                        <span class="menu-title">Nouvelle Facture</span>
                         <i class="mdi mdi-square-inc-cash menu-icon"></i>
                     </a>
                 </li>

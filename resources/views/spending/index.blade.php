@@ -46,7 +46,7 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('spending.delete', $spending['id']) }}"
-                                           class="mdi mdi-delete"></a>
+                                           class="mdi mdi-delete" style="color:purple;font-size: 150%"></a>
                                     </td>
                                 </tr>
                             @endforeach

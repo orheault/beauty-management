@@ -162,10 +162,10 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label>
-                                    Client réréfé:
+                                    Client réréfé(s):
                                 </label>
                                 <label>
-                                    {{$client[0]['numberOfReferClient']}}
+                                    {{$client['numberOfReferClient']}}
                                 </label>
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('billing.edit', $bill['id']) }}"
-                                       class="mdi mdi-pencil"></a>
+                                       class="mdi mdi-pencil" style="color:purple; font-size: 150%"></a>
                                 </td>
                             </tr>
                         @endforeach
