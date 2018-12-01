@@ -50,7 +50,29 @@
 
         <div class="tab-content bg-white">
             <div class="tab-pane container active" id="general">
+                <div class="card-body">
+                    <h4 class="card-title">Information personnel</h4>
+                    <form method="POST" action="{{ route('setting.editPersonnalInformationPost') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label>Adresse email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email"
+                                   value="{{$user->email}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Nouveau mot de passe</label>
+                            <input name="password" type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmer nouveau mot de passe</label>
+                            <input name="passwordConfirmed" type="password" class="form-control" placeholder="Password">
+                        </div>
 
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Enregistrer</button>
+                        <a class="btn btn-light" href="{{route('settings')}}"><span>Annuler</span></a>
+                    </form>
+
+                </div>
             </div>
 
             <div class="tab-pane container fade" id="product">
@@ -74,7 +96,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($data['productCategories'] as $productCategory )
+                            @foreach($productCategories as $productCategory )
                                 <tr>
                                     <td> {{ $productCategory['name']}} </td>
                                     <td>
@@ -119,7 +141,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($data['products'] as $product )
+                            @foreach($products as $product )
                                 <tr>
                                     <td> {{ $product->name}} </td>
                                     <td> {{ $product->defaultPrice }} $</td>

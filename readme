@@ -15,11 +15,13 @@ npm run watch
 
 // update and refresh database
 php artisan migrate:refresh --seed
-
 // make seed
 php artisan make:seeder UsersTableSeeder
-
 // make migration
 php artisan make:migration create_users_table
 // Update migration
 php artisan migrate --path=/database/migrations/update/
+
+
+// execute sql file in database
+mysql -u username -p database_name < file.sql

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\ProductCategory;
+use App\User;
+use Auth;
+use Hash;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -24,9 +27,10 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('setting.index')->with('data', [
-            'productCategories' => ProductCategory::all(),
-            'products' => Product::with('productCategory')->get()]);
+        return view('setting.index')
+            ->with('productCategories', ProductCategory::all())
+            ->with('products', Product::with('productCategory')->get())
+            ->with('user', Auth::user());
     }
 
     public function newProductCategory()
@@ -106,6 +110,19 @@ class SettingController extends Controller
             'defaultPrice' => $data['defaultPrice']
         ]);
 
+        return redirect('settings');
+    }
+
+    public function editPersonnalInformationPost(Request $request)
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->email = $request->email;
+
+        if ($request->password != '' && $request->passwordConfirmed == $request->password) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
         return redirect('settings');
     }
 }

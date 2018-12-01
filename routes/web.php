@@ -44,3 +44,4 @@ Route::get('/setting/editproduct/{id}', 'SettingController@editProduct')->name('
 Route::Post('/setting/createeditproduct', 'SettingController@createEditProduct')->name('setting.createeditproduct');
 Route::Post('/setting/createnewcategory', 'SettingController@createNewProductCategory')->name('setting.createnewproductcategory');
 Route::Post('/setting/createnewitem', 'SettingController@createNewProduct')->name('setting.createnewproduct');
+Route::Post('/setting/postpersonnalinformation', 'SettingController@editPersonnalInformationPost')->name('setting.editPersonnalInformationPost');
