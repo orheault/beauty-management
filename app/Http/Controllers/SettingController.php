@@ -44,6 +44,19 @@ class SettingController extends Controller
         return view('setting.newProduct')->with('data', $data);
     }
 
+    public function editProductCategory($id)
+    {
+        return view('setting.editProductCategory')->with('productCategory', ProductCategory::find($id));
+    }
+
+    public function createEditProductCategory(Request $data)
+    {
+        $productCategory = ProductCategory::where('id', $data['id'])->first();
+        $productCategory->name = $data['name'];
+        $productCategory->save();
+        return redirect('settings');
+    }
+
     public function createNewProductCategory(Request $data)
     {
         ProductCategory::create(['name' => $data['name']]);

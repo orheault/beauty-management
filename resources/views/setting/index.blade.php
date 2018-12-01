@@ -70,12 +70,17 @@
                                 <th>
                                     Nom
                                 </th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data['productCategories'] as $productCategory )
                                 <tr>
                                     <td> {{ $productCategory['name']}} </td>
+                                    <td>
+                                        <a href="{{ route('setting.editproductcategory', $productCategory['id']) }}"
+                                           class="mdi mdi-pencil"></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

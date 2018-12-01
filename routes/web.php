@@ -38,5 +38,7 @@ Route::get('/statistique', 'statistiqueController@index')->name('statistique');
 Route::get('/settings', 'SettingController@index')->name('settings');
 Route::get('/setting/newproductcategory', 'SettingController@newProductCategory')->name('setting.newproductcategory');
 Route::get('/setting/newproduct', 'SettingController@newProduct')->name('setting.newproduct');
+Route::get('/setting/editproductcategory/{id}', 'SettingController@editProductCategory')->name('setting.editproductcategory');
+Route::Post('/setting/createeditproductcategory', 'SettingController@createEditProductCategory')->name('setting.createeditproductcategory');
 Route::Post('/setting/createnewcategory', 'SettingController@createNewProductCategory')->name('setting.createnewproductcategory');
 Route::Post('/setting/createnewitem', 'SettingController@createNewProduct')->name('setting.createnewproduct');

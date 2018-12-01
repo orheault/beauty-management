@@ -7,26 +7,16 @@
             <div class="col-md">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left h4">Nouveau Produit</div>
+                        <div class="float-left h4">Modifier catégorie de produit</div>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('setting.createnewproduct') }}"
+                        <form method="POST" action="{{ route('setting.createeditproductcategory') }}"
                               aria-label="{{ __('settingCreateNewProductCategory') }}">
                             {{ csrf_field() }}
-
-                            <div class="form-group">
-                                <label>Catégorie</label>
-                                <select class="form-control" name="productCategory">
-                                    @foreach($data['productCategories'] as $category)
-                                        <option value="{{$category['id']}}">{{$category['name']}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-
                             <div class="form-group">
                                 <label>Nom</label>
-                                <input id="name"
+                                <input name="id" id="id" type="hidden" value="{{$productCategory->id}}">
+                                <input name="name" id="name" value="{{$productCategory->name}}"
                                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-lg"
                                        name="name" value="{{ old('name') }}" required autofocus>
 
@@ -35,13 +25,6 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-
-                            <div class="form-group">
-                                <div>
-                                    <label>Prix par défaut</label>
-                                    <input class="form-control form-control-lg" name="defaultPrice" type="text"/>
-                                </div>
                             </div>
 
                             <div class="form-group row mb-0">
