@@ -79,7 +79,7 @@
                                     <td> {{ $productCategory['name']}} </td>
                                     <td>
                                         <a href="{{ route('setting.editproductcategory', $productCategory['id']) }}"
-                                           class="mdi mdi-pencil"></a>
+                                           class="mdi mdi-pencil" style="color:purple;"></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -108,15 +108,26 @@
                                     Nom
                                 </th>
                                 <th>
-                                    Category
+                                    Prix par defaut
+                                </th>
+                                <th>
+                                    Catégorie
+                                </th>
+                                <th>
+                                    Action
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data['products'] as $product )
                                 <tr>
-                                    <td> {{ $product['name']}} </td>
+                                    <td> {{ $product->name}} </td>
+                                    <td> {{ $product->defaultPrice }} </td>
                                     <td> {{ $product->productcategory->name}} </td>
+                                    <td>
+                                        <a href="{{ route('setting.editproduct', $product['id']) }}"
+                                           class="float-left mdi mdi-pencil" style="color:purple;"></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

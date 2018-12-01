@@ -57,6 +57,36 @@ class SettingController extends Controller
         return redirect('settings');
     }
 
+    public function editProduct($id)
+    {
+        $productCategories = ProductCategory::all();
+        $product = Product::with('productCategory')->where('id', $id)->first();
+        $data = [
+            'productCategories' => $productCategories,
+            'product' => $product
+        ];
+
+        return view('setting.editProduct')
+            ->with('data', $data)
+            ->with('product', $product)
+            ->with('productCategories', $productCategories);
+    }
+
+    public function createEditProduct(Request $data)
+    {
+        $data->validate([
+            'defaultPrice' => 'required|integer'
+        ]);
+
+        $product = Product::where('id', $data['id'])->first();
+        $product->name = $data['name'];
+        $product->product_category_id = $data['productCategory'];
+        $product->defaultPrice = $data['defaultPrice'];
+        $product->save();
+
+        return redirect('settings');
+    }
+
     public function createNewProductCategory(Request $data)
     {
         ProductCategory::create(['name' => $data['name']]);

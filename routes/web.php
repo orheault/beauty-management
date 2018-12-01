@@ -40,5 +40,7 @@ Route::get('/setting/newproductcategory', 'SettingController@newProductCategory'
 Route::get('/setting/newproduct', 'SettingController@newProduct')->name('setting.newproduct');
 Route::get('/setting/editproductcategory/{id}', 'SettingController@editProductCategory')->name('setting.editproductcategory');
 Route::Post('/setting/createeditproductcategory', 'SettingController@createEditProductCategory')->name('setting.createeditproductcategory');
+Route::get('/setting/editproduct/{id}', 'SettingController@editProduct')->name('setting.editproduct');
+Route::Post('/setting/createeditproduct', 'SettingController@createEditProduct')->name('setting.createeditproduct');
 Route::Post('/setting/createnewcategory', 'SettingController@createNewProductCategory')->name('setting.createnewproductcategory');
 Route::Post('/setting/createnewitem', 'SettingController@createNewProduct')->name('setting.createnewproduct');
