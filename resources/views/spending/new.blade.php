@@ -59,18 +59,8 @@
                                 @endif
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 col-sm-6 float-left">
-                                    <a class="btn btn-gradient-dark"
-                                       href="{{route('spending')}}"><span>Retour</span></a>
-                                </div>
-                                <div class="col-md-4  col-sm-6 float-right">
-                                    <button type="submit"
-                                            class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
-                                        {{ __('Enregistrer') }}
-                                    </button>
-                                </div>
-                            </div>
+                            <button type="submit" class="btn btn-gradient-primary mr-2">Enregistrer</button>
+                            <a class="btn btn-light" href="{{route('spending')}}"><span>Retour</span></a>
                         </form>
                     </div>
                 </div>

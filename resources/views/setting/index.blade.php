@@ -4,17 +4,6 @@
 @section('content')
 
     <div class="container ">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="float-left h1 " style="color:purple">Setting</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br/>
 
         <style>
             .tab-pane {
@@ -78,7 +67,7 @@
             <div class="tab-pane container fade" id="product">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group font-weight-bold">Catégorie</div>
+                        <h4 class="card-title">Catégorie</h4>
 
                         <div class="float-right">
                             <a href="{{route('setting.newproductcategory')}}"
@@ -116,7 +105,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group font-weight-bold">Produit</div>
+                        <h4 class="card-title">Produit</h4>
 
                         <div class="float-right">
                             <a href="{{route('setting.newproduct')}}" class="btn btn-gradient-primary btn-rounded">Ajout

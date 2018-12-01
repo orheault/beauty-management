@@ -34,29 +34,11 @@
 
 
     <div class="container ">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="float-left h1 " style="color:purple">Client</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br/>
         <form method="POST" action="{{ route('client.postedit') }}" aria-label="{{ __('clientEdit') }}">
             {{ csrf_field() }}
             {{ Form::hidden('id', $client[0]['id']) }}
 
             <style>
-                /*            .tab-content {
-                                border-left: 1px solid purple;
-                                border-right: 1px solid purple;
-                                border-bottom: 1px solid purple;
-                                padding: 10px;
-                            }
-            */
                 .tab-pane {
 
                     border-left: 1px solid purple;
@@ -161,16 +143,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label>
-                                    Client réréfé(s):
-                                </label>
-                                <label>
-                                    {{$client['numberOfReferClient']}}
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
                                 <label class="">
                                     Client référent
                                 </label>
@@ -199,17 +171,22 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-md-6 col-sm-5 float-left">
-                            <a class="btn btn-gradient-dark" href="{{route('clients')}}"><span>Retour</span></a>
-                        </div>
-                        <div class="col-md-6 col-sm-7 float-right">
-                            <button type="submit"
-                                    class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
-                                {{ __('Enregistrer') }}
-                            </button>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>
+                                    Client réréfé(s):
+                                </label>
+                                <label>
+                                    {{$client['numberOfReferClient']}}
+                                </label>
+                            </div>
                         </div>
                     </div>
+
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Enregistrer</button>
+                    <a class="btn btn-light" href="{{route('clients')}}"><span>Retour</span></a>
                 </div>
                 <div class="tab-pane container fade" id="fauxcil">
                     <div class="form-group row">
@@ -295,5 +272,4 @@
             </div>
         </form>
     </div>
-
 @endsection

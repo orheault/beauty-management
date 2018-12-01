@@ -10,11 +10,11 @@
                             - {{ $bill->client['firstName'] . ' ' . $bill->client['lastName'] }}</div>
                     </div>
                     <div class="card-body">
-                        <label>Date </label> <label>{{ date('d-m-y', strtotime($bill['created_at'])) }}</label>
+                        <label>Date: </label> <label>{{ date('d-m-y', strtotime($bill['created_at'])) }}</label>
                         <div class="row">
                             <div class="col-md-12">
                                 <br/>
-                                <label>Total</label> <span>{{$total}} $ </span>
+                                <label>Total:</label> <span>{{$total}} $ </span>
                             </div>
                         </div>
 
@@ -59,7 +59,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{route('billing.deleteitem', $item['id'])}}"
-                                                   class="mdi mdi-delete"> </a>
+                                                   class="mdi mdi-delete" style="color:purple;font-size: 150%"> </a>
                                             </td>
                                         </tr>
                                     @endforeach
