@@ -107,7 +107,10 @@
         </nav>
 
         <div class="main-panel">
+
             <div class="content-wrapper">
+                @include('flash::message')
+
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -117,6 +120,7 @@
                         </ul>
                     </div>
                 @endif
+
                 @yield('content')
             </div>
             <footer class="footer">
@@ -128,5 +132,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(function () {
+        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    });
+</script>
 </body>
 </html>

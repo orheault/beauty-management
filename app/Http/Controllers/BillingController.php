@@ -81,10 +81,10 @@ class BillingController extends Controller
     public function deleteitem($id)
     {
         $billItem = BillItem::find($id);
-        $idBill = $billItem['idBill'];
+        $idBill = $billItem['bill_id'];
         $billItem->delete();
 
-        return redirect()->route('billing.edit', ['id' => $idBill]);
+        return redirect()->to('/billing/' . $idBill);
     }
 }
 

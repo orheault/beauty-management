@@ -118,11 +118,18 @@ class SettingController extends Controller
         $user = User::where('id', Auth::user()->id)->first();
         $user->email = $request->email;
 
-        if ($request->password != '' && $request->passwordConfirmed == $request->password) {
-            $user->password = Hash::make($request->password);
+        if ($request->password != '') {
+            if ($request->passwordConfirmed == $request->password) {
+                $user->password = Hash::make($request->password);
+            } else {
+                flash("Le mot de passe doit être identique.", 'warning');
+                back();
+            }
         }
 
         $user->save();
+        flash("Enregistré!");
+
         return redirect('settings');
     }
 }

@@ -228,17 +228,8 @@
                                   rows="4">{{$client[0]['eyelashNote']}}</textarea>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6 col-sm-5 float-left">
-                            <a class="btn btn-gradient-dark" href="{{route('clients')}}"><span>Retour</span></a>
-                        </div>
-                        <div class="col-md-6 col-sm-7 float-right">
-                            <button type="submit"
-                                    class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
-                                {{ __('Enregistrer') }}
-                            </button>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Enregistrer</button>
+                    <a class="btn btn-light" href="{{route('clients')}}"><span>Retour</span></a>
                 </div>
                 <div class="tab-pane container fade" id="billing">
                     <table class="table table-striped">
