@@ -26,6 +26,8 @@
     <script type="text/javascript" src="{{ asset('js/jquery.mask.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/off-canvas.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/misc.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/Chart.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/Chart.Bundle.js') }}"></script>
 </head>
 
 <body>
@@ -82,13 +84,12 @@
                         <i class="mdi mdi-settings menu-icon"></i>
                     </a>
                 </li>
-                {{--
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('statistique') }}">
                         <span class="menu-title">Statistique</span>
                         <i class="mdi mdi-trending-up menu-icon"></i>
                     </a>
-                </li>--}}
+                </li>
 
                 {{--<li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#client" aria-expanded="false" aria-controls="ui-basic">
