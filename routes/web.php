@@ -32,7 +32,7 @@ Route::post('/spending/create', 'SpendingController@create')->name('spending.cre
 Route::get('/spending/delete/{id}', 'SpendingController@delete')->name('spending.delete');
 
 // Statistique
-Route::get('/statistique', 'statistiqueController@index')->name('statistique');
+Route::get('/statistique', 'StatistiqueController@index')->name('statistique');
 
 // Setting
 Route::get('/settings', 'SettingController@index')->name('settings');
