@@ -35,7 +35,7 @@
                                     backgroundColor: window.chartColors.red,
                                     fill: false,
                                     data: spents,
-                                    yAxisID: 'y-axis-1',
+                                    yAxisID: 'y-axis-2',
                                 }, {
                                     label: 'Revenue',
                                     borderColor: window.chartColors.green,
@@ -60,11 +60,6 @@
                                         },
                                         scales: {
                                             yAxes: [{
-                                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                                                display: true,
-                                                position: 'left',
-                                                id: 'y-axis-1',
-                                            }, {
                                                 type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                                                 display: true,
                                                 position: 'right',
